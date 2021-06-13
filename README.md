@@ -1,5 +1,3 @@
-[![pipeline status](https://depot.dinf.usherbrooke.ca/dinf/projets/h21/eq22-projetinventaire/kdomax/badges/master/pipeline.svg)](https://depot.dinf.usherbrooke.ca/dinf/projets/h21/eq22-projetinventaire/kdomax/commits/master)
-
 # KDOMAX
 
 ### Table of Contents
