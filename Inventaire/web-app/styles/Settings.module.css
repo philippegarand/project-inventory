@@ -1,0 +1,68 @@
+.SettingsContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.SettingsCard {
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  width: 90%;
+  padding: 0.625rem;
+  margin: 2rem auto;
+}
+
+.SettingsGrid {
+  display: grid;
+  grid-template-columns: [first] min-content [second]auto [third] min-content;
+  grid-auto-rows: auto;
+  gap: 0.75rem;
+}
+body .InformationLabel {
+  grid-column: first;
+  font-weight: bold;
+  font-size: large;
+}
+
+body .InformationText {
+  grid-column: second;
+  font-size: large;
+}
+
+body .actionColumn {
+  grid-column: third;
+  align-self: center;
+}
+
+body .TextField {
+  grid-column: second;
+  align-self: center;
+}
+
+body .iconButton {
+  margin: auto;
+}
+
+body .Divider {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+@media (min-width: 37.5rem) {
+  .SettingsCard {
+    max-width: 50rem;
+    padding: 1.25rem;
+  }
+
+  .SettingsGrid {
+    grid-template-columns: [first]1fr [second]2fr [third] 1.15fr;
+  }
+
+  body .InformationLabel {
+    font-size: x-large;
+  }
+
+  body .InformationText {
+    font-size: x-large;
+  }
+}

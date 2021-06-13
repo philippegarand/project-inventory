@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  app:
+    container_name: app_prod
+    build:
+      context: web-app
+      dockerfile: Dockerfile.prod
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
+
+  api:
+    container_name: api_prod
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: https://+:443
+      ASPNETCORE_Kestrel__Certificates__Default__Password: Password01!
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/API.pfx
+      IS_DOCKER: oui
+      DB_ADDR: database
+      DB_PORT: 3306
+      DB_NAME: KDOMAX_DB
+      DB_USER: root
+      DB_PASS: Password01!
+    ports:
+      - 1337:443
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    depends_on:
+      - database
+    restart: on-failure
+
+  database:
+    container_name: db_prod
+    image: mysql:8
+    environment:
+      # User is "root"
+      MYSQL_ROOT_PASSWORD: Password01!
+      MYSQL_DATABASE: KDOMAX_DB
+    ports:
+      - 3306:3306
+    volumes:
+      - ./DB/data:/var/lib/mysql

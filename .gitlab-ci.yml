@@ -1,0 +1,21 @@
+stages :
+    - build
+    - test
+build-BE :
+    image: tiangolo/docker-with-compose #dind image with docker-compose support
+    stage: build
+    services:
+        - docker:dind
+    before_script:
+        - docker login -u $USER_FILA2605 -p $DOCKER_HUB_FILA2605
+    script:
+        - cd Inventaire
+        - docker-compose build
+        #- docker tag api:latest antoine526/kdomax:api
+        #- docker push antoine526/kdomax:api
+
+tests :
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    script:
+        - cd Inventaire/Tests
+        - dotnet test

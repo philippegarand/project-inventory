@@ -1,0 +1,33 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    'headerDiv'
+    'mainDiv';
+  grid-template-rows: 56px 100%;
+}
+
+.content {
+  grid-area: mainDiv;
+  overflow: auto;
+  height: calc(100vh - 56px);
+}
+
+@media (min-width: 600px) {
+  .layout {
+    display: grid;
+    grid-template-areas:
+      'headerDiv'
+      'mainDiv';
+    grid-template-rows: 64px 100%;
+  }
+
+  .content {
+    grid-area: mainDiv;
+    overflow: auto;
+    height: calc(100vh - 64px);
+  }
+}
+
+.header {
+  grid-area: headerDiv;
+}

@@ -1,0 +1,28 @@
+version: "3.4"
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: API/Dockerfile
+    environment:
+      IS_DOCKER: oui
+      DB_ADDR: database
+      DB_PORT: 3306
+      DB_NAME: KDOMAX_DB
+      DB_USER: root
+      DB_PASS: Password01!
+    depends_on:
+      - database
+ 
+  database:
+    image: mysql:8
+    environment:
+      # User is "root"
+      MYSQL_ROOT_PASSWORD: Password01!
+      MYSQL_DATABASE: KDOMAX_DB
+    ports:
+      - 3306:3306
+    volumes:
+      - ./DB/data:/var/lib/mysql

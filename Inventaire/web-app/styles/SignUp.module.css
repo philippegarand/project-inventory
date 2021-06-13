@@ -1,0 +1,56 @@
+.SignUpContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.SignUpCard {
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+body .Title {
+  margin-bottom: 30px;
+}
+
+body .SignUpTextField {
+  margin-bottom: 20px;
+}
+
+body .SignUpTextFieldError {
+  margin-bottom: 6px;
+}
+
+body .SignUpButton {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+body .LoginButton {
+  height: 50px;
+}
+
+body .ForgotPassword {
+  margin-top: 12px;
+  cursor: pointer;
+  float: right;
+}
+
+body .AlignCenter {
+  float: center;
+  padding-left: 30px;
+}
+
+body .LogInHypertext {
+  float: right;
+  cursor: pointer;
+}
+
+body .Divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

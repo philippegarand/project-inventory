@@ -1,0 +1,25 @@
+.dataGridContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+}
+
+.dataGrid {
+  flex-grow: 1;
+}
+
+.editIcon {
+  display: flex;
+  align-items: center;
+}
+.editIcon:hover {
+  cursor: pointer;
+}
+
+body .addButton {
+  position: fixed;
+  bottom: 18px;
+  left: 16px;
+}
