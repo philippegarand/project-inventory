@@ -1,5 +1,5 @@
 # KDOMAX
-
+[See the final product in action!](https://drive.google.com/file/d/1zQZUH62I_fwxbGFDqt6nR6mrUs_BsRFO/view?usp=sharing)
 ### Table of Contents
 
 1.  [Setup](#setup)
@@ -7,7 +7,7 @@
 2.  [Startup](#startup-the-project)
     - [Development](#development)
     - [Production](#production)
-3.  [Migrations](<#migrations-(dev)>)
+3.  [Migrations](<#migrations-dev>)
 
 ## Setup
 
